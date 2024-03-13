@@ -7,7 +7,7 @@ export const AboutMe = () => {
     return (
         <>
             <h1>{t('AboutMe-Title')}</h1>
-            <span>{t('AboutMe-Subtitle')}</span>
+            <span className="text-muted" ><small><s>{t('AboutMe-Subtitle')}</s></small></span>
             <ul>
                 <li>{t('AboutMe-Line1')}</li>
                 <li>{t('AboutMe-Line2')}</li>
