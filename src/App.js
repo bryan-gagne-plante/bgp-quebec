@@ -10,7 +10,7 @@ function App() {
         <Container fluid>
             <Row>
                 <Col>
-                    <ThemeSwitch />
+                    <ThemeSwitch/>
                 </Col>
                 <Col>
                     <Langages/>

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Container, Row, Col, Dropdown} from 'react-bootstrap';
+import {Dropdown} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
 
 function Languages() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {Container} from "react-bootstrap";
 
 export const AboutMe = () => {
     const {t} = useTranslation();
