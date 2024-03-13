@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
-import Form from 'react-bootstrap/Form';
+import React, { useState } from 'react';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function ThemeSwitch() {
-    const [theme, setTheme] = useState(
-        document.documentElement.getAttribute('data-bs-theme') || 'light'
-    );
+    const [theme, setTheme] = useState(document.documentElement.getAttribute('data-bs-theme') || 'light');
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -13,13 +11,15 @@ function ThemeSwitch() {
     };
 
     return (
-        <Form.Check
-            type="switch"
-            id="theme-switch"
-            label={`Enable ${theme === 'light' ? 'dark' : 'light'} mode`}
-            checked={theme === 'dark'}
-            onChange={toggleTheme}
-        />
+        <button
+            className={`btn ${theme === 'dark' ? 'btn-outline-light' : 'btn-outline-dark'}`}
+            onClick={toggleTheme}>
+            {theme === 'dark' ? (
+                <i className="bi bi-sun"></i>
+            ) : (
+                <i className="bi bi-moon-stars-fill"></i>
+            )}
+        </button>
     );
 }
 
