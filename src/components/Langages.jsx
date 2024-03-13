@@ -17,16 +17,18 @@ function Languages() {
     };
 
     return (
-        <Dropdown onSelect={changeLanguage}>
-            <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                {i18n.language === 'fr' ? 'Français' : 'English'}
-            </Dropdown.Toggle>
+        <div className="d-flex justify-content-end">
+            <Dropdown onSelect={changeLanguage}>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                    {i18n.language === 'fr' ? 'Français' : 'English'}
+                </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-                <Dropdown.Item eventKey="fr">Français</Dropdown.Item>
-                <Dropdown.Item eventKey="en">English</Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>
+                <Dropdown.Menu>
+                    <Dropdown.Item eventKey="fr">Français</Dropdown.Item>
+                    <Dropdown.Item eventKey="en">English</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        </div>
     );
 }
 
