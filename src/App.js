@@ -1,12 +1,21 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import {AboutMe} from './components/AboutMe';
 import Langages from './components/Langages';
-import {Container} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
+import ThemeSwitch from "./components/ThemeSwitch";
 
 function App() {
     return (
-        <Container>
-            <Langages/>
+        <Container fluid>
+            <Row>
+                <Col>
+                    <ThemeSwitch />
+                </Col>
+                <Col>
+                    <Langages/>
+                </Col>
+            </Row>
             <AboutMe/>
         </Container>
     );
