@@ -6,7 +6,7 @@ export const AboutMe = () => {
     const {t} = useTranslation();
 
     return (
-        <Container>
+        <>
             <h1>{t('AboutMe-Title')}</h1>
             <span>{t('AboutMe-Subtitle')}</span>
             <ul>
@@ -18,7 +18,7 @@ export const AboutMe = () => {
                 <li>{t('AboutMe-Line6')}</li>
             </ul>
             <p>Arrête de chercher, tu viens de le trouver !</p>
-        </Container>
+        </>
     );
 }
 

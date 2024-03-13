@@ -1,11 +1,8 @@
 import React, {useEffect} from 'react';
-import Form from 'react-bootstrap/Form'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import {Container, Row, Col, Dropdown} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
-import {Container} from "react-bootstrap";
 
-function Langages() {
+function Languages() {
     const {i18n} = useTranslation();
 
     useEffect(() => {
@@ -15,25 +12,22 @@ function Langages() {
         changeLanguage();
     }, [i18n]);
 
-    function changerLangue(langue) {
-        i18n.changeLanguage(langue);
-    }
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
 
     return (
-        <Container>
-            <Row className="mt-3">
-                <Col xs={{span: 6, offset: 6}} sm={{span: 3, offset: 9}} lg={{span: 2, offset: 10}}>
-                    <Form.Group>
-                        <Form.Control as="select" className="mb-3"
-                                      onChange={(event) => changerLangue(event.target.value)}>
-                            <option value="fr">Français</option>
-                            <option value="en">English</option>
-                        </Form.Control>
-                    </Form.Group>
-                </Col>
-            </Row>
-        </Container>
+        <Dropdown onSelect={changeLanguage}>
+            <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                {i18n.language === 'fr' ? 'Français' : 'English'}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+                <Dropdown.Item eventKey="fr">Français</Dropdown.Item>
+                <Dropdown.Item eventKey="en">English</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
     );
 }
 
-export default Langages;
+export default Languages;
